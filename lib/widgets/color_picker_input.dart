@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:iglu_color_picker_flutter/iglu_color_picker_flutter.dart';
 
 /// Provide hex input wiget for 3/6/8 digits.
@@ -24,6 +25,7 @@ class IGColorPickerInput extends StatefulWidget {
     this.borderColor,
     this.padding,
     this.inputStyle,
+    this.prefixIcon,
   });
 
   //CONTAINER DECORATION OPTIONS
@@ -38,6 +40,8 @@ class IGColorPickerInput extends StatefulWidget {
   final bool disable;
   final void Function()? onCurrentColorTap;
   final TextStyle? inputStyle;
+
+  final Widget? prefixIcon;
 
   @override
   IGColorPickerInputState createState() => IGColorPickerInputState();
@@ -89,23 +93,9 @@ class IGColorPickerInputState extends State<IGColorPickerInput> {
                   FilteringTextInputFormatter.allow(RegExp(kValidHexPattern)),
                 ],
                 decoration: InputDecoration(
+                  labelText: 'HEX',
                   border: InputBorder.none,
-                  suffixIcon: GestureDetector(
-                    onTap: widget.onCurrentColorTap,
-                    child: SizedBox(
-                      width: 40,
-                      child: Center(
-                        child: Container(
-                          height: 20,
-                          width: 20,
-                          decoration: BoxDecoration(
-                            color: colorFromHex(textEditingController.text),
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  prefixIcon: widget.prefixIcon,
                 ),
                 onChanged: (String value) {
                   var input = value;

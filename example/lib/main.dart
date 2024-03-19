@@ -65,13 +65,14 @@ class _ColorPickerExampleHomeState extends State<ColorPickerExampleHome> {
                     Text(index == 0 ? 'Hue Ring Picker' : 'Slide Picker'),
                     const Icon(
                       Icons.chevron_right_rounded,
-                    )
+                    ),
                   ],
                 ),
               ),
             );
           }
           final type = IGPaletteType.values[index - 2];
+
           return Container(
             height: 44,
             margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),

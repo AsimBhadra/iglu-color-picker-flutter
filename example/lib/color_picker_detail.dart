@@ -22,7 +22,7 @@ class _ColorPickerDetailState extends State<ColorPickerDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Color Picker'),
+        title: const Text('Color Picker Test'),
       ),
       body: SingleChildScrollView(
         child: IGColorPicker(
@@ -30,7 +30,11 @@ class _ColorPickerDetailState extends State<ColorPickerDetail> {
           paletteType: widget.paletteType,
           colorHistory: const [Colors.red],
           enableAlpha: false,
+          areaBorderWidth: 0,
+          areaBorderColor: Colors.transparent,
+          areaRadius: 12,
           areaHeight: 70,
+          inputBarBorderColor: const Color(0xFF366CF8),
           historyColorsBuilder: () {
             return const SizedBox();
           },

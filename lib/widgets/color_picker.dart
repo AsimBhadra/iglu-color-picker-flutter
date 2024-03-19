@@ -58,6 +58,7 @@ class IGColorPicker extends StatefulWidget {
       IGColorLabelType.hsl,
     ],
     this.colorDetailsWidget,
+    this.prefixIcon,
   });
 
   //GENERAL
@@ -86,6 +87,9 @@ class IGColorPicker extends StatefulWidget {
   final double? alphaSliderRadius;
   final Color? alphaSliderBorderColor;
   final double? alphaSliderBorderWidth;
+
+  //PREFIX ICON
+  final Widget? prefixIcon;
 
   //DECORATION COLOR PICKER AREA
   final double areaWidth;
@@ -160,6 +164,7 @@ class IGColorPickerState extends State<IGColorPicker> {
             else
               IGColorPickerInput(
                 color: currentHsvColor.toColor(),
+                prefixIcon: widget.prefixIcon,
                 onColorChanged: (Color color) {
                   setState(
                     () => currentHsvColor = HSVColor.fromColor(color),
