@@ -95,7 +95,14 @@ class IGColorPickerInputState extends State<IGColorPickerInput> {
                 decoration: InputDecoration(
                   labelText: 'HEX',
                   border: InputBorder.none,
-                  prefixIcon: widget.prefixIcon,
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: widget.prefixIcon,
+                  ),
+                  prefixIconConstraints: const BoxConstraints(
+                    minWidth: 36,
+                    minHeight: 36,
+                  ),
                 ),
                 onChanged: (String value) {
                   var input = value;

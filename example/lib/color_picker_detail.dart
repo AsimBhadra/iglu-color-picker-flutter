@@ -6,6 +6,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:iglu_color_picker_flutter/iglu_color_picker_flutter.dart';
 
 class ColorPickerDetail extends StatefulWidget {
@@ -40,6 +41,10 @@ class _ColorPickerDetailState extends State<ColorPickerDetail> {
           historyColorsBuilder: () {
             return const SizedBox();
           },
+          
+          prefixIcon: SvgPicture.asset(
+            'assets/hash.svg',
+          ),
           colorDetailsWidget: (hex, rgb, hsl, hsv) {
             return const SizedBox();
           },
