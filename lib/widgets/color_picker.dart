@@ -153,35 +153,6 @@ class IGColorPickerState extends State<IGColorPicker> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          //COLOR PICKER AREA
-          SizedBox(
-            width: widget.areaWidth,
-            height: widget.areaHeight ?? widget.areaWidth,
-            child: _colorPicker,
-          ),
-
-          space,
-
-          //COLOR PICKER SLIDER & ALPHA SLIDER
-          if (widget.showSlider)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      _sliderByPaletteType,
-                      space,
-                      if (widget.enableAlpha)
-                        _colorPickerSlider(IGTrackType.alpha),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-
-          space,
-
           //COLOR PICKER INPUT BAR
           if (widget.showInputBar) ...[
             if (widget.customInputBar != null)
@@ -213,6 +184,34 @@ class IGColorPickerState extends State<IGColorPicker> {
                 disable: widget.inputBarDisable ?? false,
               ),
           ],
+
+          space,
+          //COLOR PICKER AREA
+          SizedBox(
+            width: widget.areaWidth,
+            height: widget.areaHeight ?? widget.areaWidth,
+            child: _colorPicker,
+          ),
+
+          space,
+
+          //COLOR PICKER SLIDER & ALPHA SLIDER
+          if (widget.showSlider)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      _sliderByPaletteType,
+                      space,
+                      if (widget.enableAlpha)
+                        _colorPickerSlider(IGTrackType.alpha),
+                    ],
+                  ),
+                ),
+              ],
+            ),
 
           space,
 

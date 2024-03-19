@@ -29,6 +29,14 @@ class _ColorPickerDetailState extends State<ColorPickerDetail> {
           currentColor: Colors.red,
           paletteType: widget.paletteType,
           colorHistory: const [Colors.red],
+          enableAlpha: false,
+          areaHeight: 70,
+          historyColorsBuilder: () {
+            return const SizedBox();
+          },
+          colorDetailsWidget: (hex, rgb, hsl, hsv) {
+            return const SizedBox();
+          },
           onColorChanged: (color) {
             if (kDebugMode) {
               print(color);
