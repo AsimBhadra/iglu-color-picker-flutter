@@ -35,6 +35,8 @@ class _ColorPickerDetailState extends State<ColorPickerDetail> {
           areaRadius: 12,
           areaHeight: 70,
           inputBarBorderColor: const Color(0xFF366CF8),
+          sliderBorderWidth: 0,
+          sliderBorderColor: Colors.transparent,
           historyColorsBuilder: () {
             return const SizedBox();
           },

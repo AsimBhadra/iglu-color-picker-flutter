@@ -133,7 +133,7 @@ class IGColorPickerSlider extends StatelessWidget {
         }
 
         return SizedBox(
-          height: 40,
+          height: 20,
           child: CustomMultiChildLayout(
             delegate: SliderLayout(),
             children: <Widget>[
